@@ -13,7 +13,9 @@ This project aims to create a macroscopic-scale physical experiment to explore t
 
 **Why it Matters**:
 Emergent phenomena are pervasive in nature, from flocking birds to economic systems. This experiment provides a controlled environment to understand the underlying principles behind such occurrences.
-
+![photo of the experiment](IMG_8073.JPG)
+![photo of the experiment](IMG_8076.JPG)
+![photo of the experiment](IMG_8078.JPG)
 ---
 
 ## Background
@@ -71,3 +73,50 @@ Emergent phenomena are pervasive in nature, from flocking birds to economic syst
 
 ## Contributing & Feedback
 If you're interested in extending this experiment or have observations of your own, please contribute to this repository or leave feedback through [Issues](#).
+
+
+# Detailed Insights
+
+## The Cheerios Effect: A Deep Dive
+
+The **Cheerios effect** is a commonly observed phenomenon, particularly during breakfast! At a fundamental level, this effect is an interplay of several physical forces:
+
+- **Buoyancy**: Dictates if an object will float or sink. Objects less dense than the fluid will float, and those denser will sink. This principle ensures our 3D printed shapes stay afloat.
+  
+- **Surface Tension**: At a liquid's surface, the molecules stick together more closely than they do to the air above, creating a sort of 'skin' effect. This skin can be distorted by floating objects, leading to potential attractive forces.
+  
+- **Meniscus Effect**: At the edges of a container, liquids tend to curve upwards or downwards. This curvature can influence the movement of floating objects, often pushing them to the edges.
+
+Together, these forces and effects cause floating objects to attract each other and the walls of their container, resulting in clusters and clumps.
+
+---
+
+## Aperiodic Monotiles: From Penrose to the Present
+
+**Aperiodic monotiles** are shapes that can cover a plane without leaving gaps but in a non-repeating pattern. They are intriguing from a mathematical standpoint and have been a subject of interest for decades.
+
+- **Roger Penrose**: In the 1970s, the Nobel-prize-winning physicist discovered a set of shapes (known as Penrose Tiles) that could cover a surface aperiodically. However, they worked as a set and not as individual monotiles.
+
+- **"The Hat" & "Spectre"**: Recent discoveries have found individual tiles, notably the 13-sided "hat" and the curved "Spectre," which can cover a plane without repeating patterns. These shapes brought new dimensions to the study of aperiodic tiling, bridging the gap between theory and tangible representation.
+
+These shapes, particularly when made tangible through 3D printing, offer incredible insights into patterns, structures, and the nature of order and chaos.
+
+---
+
+## Diffusion-Limited Aggregation (DLA)
+
+DLA is a process in which particles undergo random walks due to diffusion and cluster upon contact. It's a phenomenon observed in various systems, from the growth of coral reefs to mineral deposits. In the context of this project, the emergent patterns formed by the floating aperiodic tiles can sometimes mimic the results of DLA simulations, offering a macroscopic and controlled environment to study such phenomena.
+
+---
+
+## Conclusion
+
+The study of simple systems to derive complex behaviors has always been a cornerstone of scientific exploration. By diving deep into the nuances of these foundational principles, we are better equipped to understand, predict, and innovate in our ever-evolving world.
+
+
+---
+
+## Contributing & Feedback
+If you're interested in extending this experiment or have observations of your own, please contribute to this repository or leave feedback through [Issues](#).
+
+
