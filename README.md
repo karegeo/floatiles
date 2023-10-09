@@ -29,8 +29,21 @@ Previous experiments with Spectre monotile in small container:
 ![photo of the experiment](IMG_8076.JPG)
 ![photo of the experiment](IMG_8078.JPG)
 
-
 ---
+
+
+## Poster text
+
+Cheerios Effect: Floating objects on a liquid surface come together due to surface tension and buoyancy. This phenomenon can be harnessed to control and manipulate the assembly of specific structures. The light reflection in the given figures effectively demonstrates the deformation of the water surface around the floating objects. This deformation results in the force that pulls objects together, allowing for controlled aggregation of structures.
+
+Aperiodic Tiling: covering a whole plane without a repeating pattern using a single tile type. The 2023 discovery of the “hat” and “spectre” offers a unique geometric shape that can be incorporated into the experiment. Tiles can be created using 3D printing or laser cutting. They were introduced to a water surface to see how they aggregate based on the Cheerios Effect.
+
+The “FloaTiles” project combines two ideas to demonstrate how individual tiles interact through the Cheerios Effect to produce emergent behavior. 
+
+The system can produce more complex patterns by adding tiles and stationary elements (engines) that have specific effects like attraction and repulsion. 
+Patterns can affect the level of perturbation in real-time by the feedback loop of the video from the camera.
+
+
 
 ## Background
 
@@ -116,6 +129,9 @@ Together, these forces and effects cause floating objects to attract each other 
 These shapes, particularly when made tangible through 3D printing, offer incredible insights into patterns, structures, and the nature of order and chaos.
 
 ---
+
+
+
 
 ## Diffusion-Limited Aggregation (DLA)
 
