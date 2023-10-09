@@ -3,6 +3,7 @@
 ## Abstract
 This project aims to create a macroscopic-scale physical experiment to explore the emergence of complex behaviors using simple foundational principles. By combining the Cheerios effect, a well-observed phenomenon in fluid dynamics, with the mathematically fascinating concept of aperiodic monotiles, we seek to manifest and investigate intricate emergent patterns.
 
+https://karegeo.github.io/floatiles/
 ---
 
 ## Introduction
