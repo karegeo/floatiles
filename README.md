@@ -12,10 +12,18 @@ This project aims to create a macroscopic-scale physical experiment to explore t
 - Offer a tangible, visual representation of theoretical concepts, making them more accessible and compelling.
 
 **Why it Matters**:
+
+
 Emergent phenomena are pervasive in nature, from flocking birds to economic systems. This experiment provides a controlled environment to understand the underlying principles behind such occurrences.
+
+
 ![photo of the experiment](IMG_8073.JPG)
 ![photo of the experiment](IMG_8076.JPG)
 ![photo of the experiment](IMG_8078.JPG)
+
+
+<div style="padding:75% 0 0 0;position:relative;"><iframe src="https://player.vimeo.com/video/872448462?badge=0&amp;autopause=0&amp;quality_selector=1&amp;progress_bar=1&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" style="position:absolute;top:0;left:0;width:100%;height:100%;" title="experiment-cropped"></iframe></div><script src="https://player.vimeo.com/api/player.js"></script>
+
 ---
 
 ## Background
