@@ -136,4 +136,6 @@ If you're interested in extending this experiment or have observations of your o
 
 ## References and aknowledgments
 
+https://github.com/christianp/aperiodic-monotile for files
+
 https://stablediffusion.fr for QR code 
