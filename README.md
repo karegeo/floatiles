@@ -134,3 +134,6 @@ The study of simple systems to derive complex behaviors has always been a corner
 If you're interested in extending this experiment or have observations of your own, please contribute to this repository or leave feedback through [Issues](#).
 
 
+## References and aknowledgments
+
+https://stablediffusion.fr for QR code 
