@@ -3,7 +3,7 @@
 ## Abstract
 This project aims to create a macroscopic-scale physical experiment to explore the emergence of complex behaviors using simple foundational principles. By combining the Cheerios effect, a well-observed phenomenon in fluid dynamics, with the mathematically fascinating concept of aperiodic monotiles, we seek to manifest and investigate intricate emergent patterns.
 
-https://karegeo.github.io/floatiles/
+[https://karegeo.github.io/floatiles/]
 ---
 
 ## Introduction
@@ -153,8 +153,11 @@ If you're interested in extending this experiment or have observations of your o
 
 ## References and aknowledgments
 
-https://cs.uwaterloo.ca/~csk/spectre/ for dicovery
+[https://cs.uwaterloo.ca/~csk/spectre/] for dicovery
 
-https://github.com/christianp/aperiodic-monotile for files
+[https://github.com/christianp/aperiodic-monotile] for files
 
-https://stablediffusion.fr for QR code 
+[https://stablediffusion.fr] for QR code 
+
+
+OIST, especially Brian Morrissey and Stephen Estelle for help with the all equipment, and to Roman Mukhin for first 3D print.
