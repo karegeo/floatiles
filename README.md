@@ -164,3 +164,10 @@ If you're interested in extending this experiment or have observations of your o
 
 
 OIST, especially Brian Morrissey and Stephen Estelle for help with the all equipment, and to Roman Mukhin for first 3D print.
+Ikegami lab (UTokyo), especially Dr Ikegami and johnsmith
+
+## More links:
+
+ Particles of larger charge forming "molecules"  by  Nils Berglund @NilsBerglund
+<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/kicn2fX11CI?si=hfFMimbjx9f6fAk6" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+ 
