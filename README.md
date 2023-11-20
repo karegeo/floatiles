@@ -168,6 +168,8 @@ Ikegami lab (UTokyo), especially Dr Ikegami and johnsmith
 
 ## More links:
 
+<https://arxiv.org/abs/2301.03397> Evaporation-induced self-assembling of few-layer graphene into a fractal-like conductive macro-network with a reduction of percolation threshold
+
  Particles of larger charge forming "molecules"  by  Nils Berglund @NilsBerglund
 <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/kicn2fX11CI?si=hfFMimbjx9f6fAk6" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
  
