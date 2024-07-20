@@ -21,9 +21,17 @@ This project aims to create a macroscopic-scale physical experiment to explore t
 Emergent phenomena are pervasive in nature, from flocking birds to economic systems. This experiment provides a controlled environment to understand the underlying principles behind such occurrences.
 
 
-Latest experiments with Hat monotile in small container with manual perturbations:
+Latest experiments with Spectre monotile in medium container with new vibrational automatic perturbations:
 
 
+<iframe title="vimeo-player" src="https://player.vimeo.com/video/932065743?h=c4199bff19" width="640" height="360" frameborder="0"    allowfullscreen></iframe>
+
+
+<iframe title="vimeo-player" src="https://player.vimeo.com/video/932068099?h=b203182a93" width="640" height="360" frameborder="0"    allowfullscreen></iframe>
+
+
+
+Previous experiments with Hat monotile in small container with manual perturbations:
 
 
 
