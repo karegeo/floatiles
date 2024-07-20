@@ -5,8 +5,12 @@ This project aims to create a macroscopic-scale physical experiment to explore t
 
 <https://karegeo.github.io/floatiles/>
 
-ALIFE 2024:
+### ALIFE 2024:
+
+
 Extended Abstract: <https://github.com/karegeo/floatiles/blob/main/ALife_conference_2024___Submission_32___Camera_Ready.pdf>
+
+
 Poster: <https://github.com/karegeo/floatiles/blob/main/ALIFE_2024_OIST_LaTeX_Template__OIST_Posters-1.pdf>
 
 ---
