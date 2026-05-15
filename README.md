@@ -2,24 +2,23 @@
 
 **Self-assembly based on the Cheerios effect and aperiodic monotiles.**
 
-A project of the Embodied Cognitive Science Unit, Okinawa Institute of Science and Technology Graduate University (OIST).
-Lead: Georgii Karelin · with Brian Morrissey and Tom Froese.
+A small experimental project by Georgii Karelin at the [Embodied Cognitive Science Unit (ECSU)](https://www.oist.jp/research/research-units/ecsu), Okinawa Institute of Science and Technology Graduate University (OIST).
 
 <https://karegeo.github.io/floatiles/>
 
 ---
 
-## Overview
+## About
 
-FloaTiles is a low-cost macroscopic experimental platform for studying **emergent collective behaviour in passive matter**. Identical 3D-printed polygonal tiles float on a shallow water surface and interact through the *Cheerios effect*: minimisation of the air–water interfacial energy produces capillary attraction whose magnitude depends on tile geometry, material, and the level of agitation imposed by motor-driven vibration or airflow.
+FloaTiles is a simple, affordable tabletop experiment. Identical 3D-printed polygonal tiles float on a shallow water surface and slowly come together because of the *Cheerios effect* — the familiar capillary attraction that makes breakfast cereal clump in a bowl of milk. Adding gentle vibration or airflow changes how the tiles aggregate and break apart, and the shape of the tile (we mostly use the recently discovered *Hat* and *Spectre* aperiodic monotiles) influences the patterns that emerge.
 
-Without motors, sensors, or onboard control in the tiles themselves, the system spontaneously aggregates into transient clusters whose morphology and lifetime are governed by the interplay between attraction and externally imposed noise. The platform is deliberately minimal — cheap to build, easy to reproduce, and well-suited to artificial-life experiments in self-assembly.
-
-A more complete write-up with quantitative analysis (image-based cluster tracking, perimeter–area scaling, fractal-dimension measurement, and a complementary cluster–cluster aggregation simulation) is in preparation; results will appear here once published.
+The goal of the project is modest: to see how much interesting collective behaviour can come out of very simple ingredients — geometry, surface tension, and a bit of noise — without any electronics or active components in the tiles themselves. Further analysis of the recordings is ongoing.
 
 ---
 
 ## ALIFE 2024
+
+Karelin, G. (2024). *Floatiles: Self-Assembly Based On Cheerios Effect and Aperiodic Monotiles.* ALIFE 2024 (extended abstract).
 
 - Extended abstract: [ALife_conference_2024___Submission_32___Camera_Ready.pdf](ALife_conference_2024___Submission_32___Camera_Ready.pdf)
 - Poster: [ALIFE_2024_OIST_LaTeX_Template__OIST_Posters-1.pdf](ALIFE_2024_OIST_LaTeX_Template__OIST_Posters-1.pdf)
@@ -66,23 +65,23 @@ Three physical principles govern the effect:
 
 Aperiodic monotiles are single shapes that tile the plane without producing a repeating pattern. The 2023 discoveries of the **Hat** and **Spectre** tiles (Smith, Myers, Kaplan & Goodman-Strauss) made the *einstein* problem concrete with shapes that can be fabricated and studied physically. In FloaTiles we use 3D-printed tiles inspired by these shapes; small spikes and notches on the edges act as a primitive key-and-lock system that increases the effective capillary contact between adjacent tiles.
 
-### Why this matters
+### Why it might be interesting
 
-Emergent phenomena are pervasive in nature, from flocking birds to economic systems. FloaTiles provides a controlled tabletop environment in which simple physical ingredients — geometry, surface tension, agitation — produce rich, visible self-organisation. It also brings the system into direct contact with classical theoretical results on aggregation kinetics and fractal cluster geometry.
+Self-organisation shows up everywhere in nature, from cereal in a bowl to mosquito eggs and fire-ant rafts. FloaTiles is a small attempt to reproduce a tiny corner of that in a controlled, easy-to-rebuild setup, and to see what happens when the tile shape is unusual.
 
 ---
 
 ## Apparatus
 
-The setup consists of a shallow rectangular pool sitting on a slab supported by a modular perforated-steel-strut frame, with a DC gear motor and eccentric counterweight mounted below the slab to couple vibration into the water. A JDT-001 external speed controller gives quasi-continuous adjustment of vibration amplitude and dominant frequency. Optional small fans (surface airflow) and an aquarium bubble generator (sub-surface agitation) provide additional sources of noise. A USB webcam mounted above the pool records the dynamics for image analysis.
+A shallow rectangular pool sits on a slab supported by a modular perforated-steel-strut frame. A small DC motor with an eccentric mass is mounted underneath and couples vibration into the slab and the water; a household speed controller (JDT-001) lets us adjust amplitude and frequency. Optional small fans and an aquarium bubble generator provide alternative ways of adding noise. A USB webcam above the pool records the experiment.
 
-The mechanical design is parametric (OpenSCAD), so dimensions, motor placement, and frame geometry are reproducible from a single script.
+The frame and pool are designed as a parametric OpenSCAD script, so the dimensions can be reproduced or adapted.
 
 ### Tiles
 
-- 3D-printed polygonal tiles, characteristic linear dimension ~1 cm.
-- Dark filament for high optical contrast against diffuse illumination.
-- A small bright fiducial marker glued to the top face of each tile for tracking.
+- 3D-printed polygonal tiles, roughly 1 cm across.
+- Dark filament so they stand out against diffuse illumination.
+- A small bright marker on top of each tile makes them easier to track.
 
 ---
 
@@ -117,9 +116,55 @@ Full poster: [Poster CCS2023stable.pdf](Poster%20CCS2023stable.pdf)
 
 ## Acknowledgments
 
-OIST, especially **Brian Morrissey** and **Stephen Estelle** for help with equipment and 3D printing/laser cutting. **Roman Mukhin** for the first 3D print. The **Ikegami Lab** at the University of Tokyo for hosting early pilot experiments. The **Embodied Cognitive Science Unit** at OIST (Tom Froese) for supervision and support.
+This project would not have been possible without the help of the **OIST Embodied Cognitive Science Unit (ECSU)**: **Stephen Estelle** for 3D printing and laser cutting, **Brian Morrissey** for the vibrational platform, and **Tom Froese** for supervision and support. **Roman Mukhin** kindly helped with the first 3D print. The first pilot experiments were carried out during an educational visit to the **Takashi Ikegami Laboratory** at the University of Tokyo, with the help of [johnsmith](http://johnsmithstudios.com).
 
 Tile-design files originally drew on <https://github.com/christianp/aperiodic-monotile> and Craig Kaplan's spectre resource at <https://cs.uwaterloo.ca/~csk/spectre/>. QR code generated with <https://stablediffusion.fr>.
+
+---
+
+## Related concepts and reading
+
+Background reading that the FloaTiles project sits next to. Most of these are general overview pages — useful starting points if you want to dig into the physics, mathematics, or artificial-life context.
+
+### Physics and self-organisation
+
+- [**Self-assembly** (Wikipedia)](https://en.wikipedia.org/wiki/Self-assembly) — the umbrella concept: components organising into ordered structures without external guidance. FloaTiles is a macroscopic, capillary-driven case of this.
+- [**Self-organization** (Scholarpedia)](http://www.scholarpedia.org/article/Self-organization) — a careful definition emphasising the difference between self-organisation (pattern emergence in a dynamical system) and self-assembly (a special case where the products are equilibrium structures).
+- [**Emergence** (Wikipedia)](https://en.wikipedia.org/wiki/Emergence) — what we mean when "a whole has properties its parts do not have on their own."
+- [**Cheerios effect** (Wikipedia)](https://en.wikipedia.org/wiki/Cheerios_effect) — the specific capillary phenomenon that FloaTiles uses.
+- [**Capillary action** (Wikipedia)](https://en.wikipedia.org/wiki/Capillary_action) — the underlying interfacial physics.
+- [**Surface tension** (Wikipedia)](https://en.wikipedia.org/wiki/Surface_tension).
+
+### Aggregation and pattern formation
+
+- [**Diffusion-limited aggregation** (Wikipedia)](https://en.wikipedia.org/wiki/Diffusion-limited_aggregation) — the canonical stochastic model for fractal aggregation (Witten & Sander, 1981). Cluster–cluster aggregation is its many-cluster cousin and is the most natural theoretical reference point for the patterns FloaTiles produces.
+- [**Active matter** (Wikipedia)](https://en.wikipedia.org/wiki/Active_matter) — a coarse-grained description of collective behaviour in systems whose individual units are *driven* (each unit appears to inject energy at its own scale). FloaTiles is driven only externally — at the level of the whole pool — and the individual tiles themselves are passive. The line between "active" and "passive" is really a statement about where, in the coarse-grained description, the drive enters.
+- [**Granular material** (Wikipedia)](https://en.wikipedia.org/wiki/Granular_material) — vibrated granular layers also show rich pattern formation and segregation, and share several technical questions (Faraday-like instabilities, jamming, anisotropy of agitation) with FloaTiles.
+
+### Self-assembly as a manufacturing approach
+
+- [**Self-assembly based manufacturing** (Wikipedia)](https://en.wikipedia.org/wiki/Self-assembly_based_manufacturing) — using self-assembly to build structures, from DNA origami to mesoscale capillary assembly (Whitesides and collaborators).
+- [**Programmable matter** (Wikipedia)](https://en.wikipedia.org/wiki/Programmable_matter) — a long-running adjacent goal: matter whose properties can be reconfigured by design or signal.
+
+### Aperiodic order
+
+- [**Aperiodic tiling** (Wikipedia)](https://en.wikipedia.org/wiki/Aperiodic_tiling) — tilings that admit no translational symmetry.
+- [**Einstein problem** (Wikipedia)](https://en.wikipedia.org/wiki/Einstein_problem) — the question of a single tile that tiles only aperiodically. Solved in 2023 by Smith, Myers, Kaplan & Goodman-Strauss with the *Hat* and *Spectre*.
+- [**Quasicrystal** (Wikipedia)](https://en.wikipedia.org/wiki/Quasicrystal) — physical solids with long-range aperiodic order; the deep physical motivation for studying aperiodic tilings.
+- [**Penrose tiling** (Wikipedia)](https://en.wikipedia.org/wiki/Penrose_tiling) — the classical pair of aperiodic tiles.
+
+### Artificial life context
+
+- [**Artificial life** (Wikipedia)](https://en.wikipedia.org/wiki/Artificial_life) — the field FloaTiles is presented in.
+- [**Open-ended evolution** (Wikipedia)](https://en.wikipedia.org/wiki/Open-ended_evolution) — the longer-term question of whether systems like FloaTiles can be enriched into substrates where novelty keeps appearing.
+- [**ALIFE conference series**](https://alife.org/) — the annual international conference on artificial life.
+- [**ISAL — International Society for Artificial Life**](https://alife.org/about-isal/) — the society that organises ALIFE.
+- [**ISAROB — International Society for Artificial Life and Robotics**](https://isarob.org/) — host of the AROB / ICAROB conferences.
+
+### Institutional
+
+- [**OIST Embodied Cognitive Science Unit (ECSU)**](https://www.oist.jp/research/research-units/ecsu) — the home unit for the FloaTiles project at OIST.
+- [**Okinawa Institute of Science and Technology Graduate University (OIST)**](https://www.oist.jp/) — the host institution.
 
 ### Related work and inspiration
 
