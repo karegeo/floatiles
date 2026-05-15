@@ -120,6 +120,52 @@ This project would not have been possible without the help of the **OIST Embodie
 
 Tile-design files originally drew on <https://github.com/christianp/aperiodic-monotile> and Craig Kaplan's spectre resource at <https://cs.uwaterloo.ca/~csk/spectre/>. QR code generated with <https://stablediffusion.fr>.
 
+---
+
+## Related concepts and reading
+
+Background reading that the FloaTiles project sits next to. Most of these are general overview pages — useful starting points if you want to dig into the physics, mathematics, or artificial-life context.
+
+### Physics and self-organisation
+
+- [**Self-assembly** (Wikipedia)](https://en.wikipedia.org/wiki/Self-assembly) — the umbrella concept: components organising into ordered structures without external guidance. FloaTiles is a macroscopic, capillary-driven case of this.
+- [**Self-organization** (Scholarpedia)](http://www.scholarpedia.org/article/Self-organization) — a careful definition emphasising the difference between self-organisation (pattern emergence in a dynamical system) and self-assembly (a special case where the products are equilibrium structures).
+- [**Emergence** (Wikipedia)](https://en.wikipedia.org/wiki/Emergence) — what we mean when "a whole has properties its parts do not have on their own."
+- [**Cheerios effect** (Wikipedia)](https://en.wikipedia.org/wiki/Cheerios_effect) — the specific capillary phenomenon that FloaTiles uses.
+- [**Capillary action** (Wikipedia)](https://en.wikipedia.org/wiki/Capillary_action) — the underlying interfacial physics.
+- [**Surface tension** (Wikipedia)](https://en.wikipedia.org/wiki/Surface_tension).
+
+### Aggregation and pattern formation
+
+- [**Diffusion-limited aggregation** (Wikipedia)](https://en.wikipedia.org/wiki/Diffusion-limited_aggregation) — the canonical stochastic model for fractal aggregation (Witten & Sander, 1981). Cluster–cluster aggregation is its many-cluster cousin and is the most natural theoretical reference point for the patterns FloaTiles produces.
+- [**Active matter** (Wikipedia)](https://en.wikipedia.org/wiki/Active_matter) — collective behaviour in systems of self-propelled units. FloaTiles is *passive* — useful as a counterpoint, since the tiles have no internal energy source and all noise comes from outside.
+- [**Granular material** (Wikipedia)](https://en.wikipedia.org/wiki/Granular_material) — vibrated granular layers also show rich pattern formation and segregation, and share several technical questions (Faraday-like instabilities, jamming, anisotropy of agitation) with FloaTiles.
+
+### Self-assembly as a manufacturing approach
+
+- [**Self-assembly based manufacturing** (Wikipedia)](https://en.wikipedia.org/wiki/Self-assembly_based_manufacturing) — using self-assembly to build structures, from DNA origami to mesoscale capillary assembly (Whitesides and collaborators).
+- [**Programmable matter** (Wikipedia)](https://en.wikipedia.org/wiki/Programmable_matter) — a long-running adjacent goal: matter whose properties can be reconfigured by design or signal.
+
+### Aperiodic order
+
+- [**Aperiodic tiling** (Wikipedia)](https://en.wikipedia.org/wiki/Aperiodic_tiling) — tilings that admit no translational symmetry.
+- [**Einstein problem** (Wikipedia)](https://en.wikipedia.org/wiki/Einstein_problem) — the question of a single tile that tiles only aperiodically. Solved in 2023 by Smith, Myers, Kaplan & Goodman-Strauss with the *Hat* and *Spectre*.
+- [**Quasicrystal** (Wikipedia)](https://en.wikipedia.org/wiki/Quasicrystal) — physical solids with long-range aperiodic order; the deep physical motivation for studying aperiodic tilings.
+- [**Penrose tiling** (Wikipedia)](https://en.wikipedia.org/wiki/Penrose_tiling) — the classical pair of aperiodic tiles.
+
+### Artificial life context
+
+- [**Artificial life** (Wikipedia)](https://en.wikipedia.org/wiki/Artificial_life) — the field FloaTiles is presented in.
+- [**Open-ended evolution** (Wikipedia)](https://en.wikipedia.org/wiki/Open-ended_evolution) — the longer-term question of whether systems like FloaTiles can be enriched into substrates where novelty keeps appearing.
+- [**ALIFE conference series**](https://alife.org/) — the annual international conference on artificial life.
+- [**ISAL — International Society for Artificial Life**](https://alife.org/about-isal/) — the society that organises ALIFE.
+- [**ISAROB — International Society for Artificial Life and Robotics**](https://isarob.org/) — host of the AROB / ICAROB conferences.
+
+### Institutional
+
+- [**OIST Embodied Cognitive Science Unit (ECSU)**](https://www.oist.jp/research/research-units/ecsu) — the home unit for the FloaTiles project at OIST.
+- [**Okinawa Institute of Science and Technology Graduate University (OIST)**](https://www.oist.jp/) — the host institution.
+
 ### Related work and inspiration
 
 - [Evaporation-induced self-assembling of few-layer graphene into a fractal-like conductive macro-network](https://arxiv.org/abs/2301.03397)
