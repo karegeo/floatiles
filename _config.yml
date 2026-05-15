@@ -5,3 +5,8 @@ plugins:
 title: FloaTiles
 description: A low-cost passive macroscopic platform for studying capillary self-assembly and cluster–cluster aggregation
 show_downloads: false
+
+markdown: kramdown
+kramdown:
+  input: GFM
+  hard_wrap: false
