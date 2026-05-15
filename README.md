@@ -1,5 +1,4 @@
 ---
-layout: with-mathjax
 ---
 
 # FloaTiles
