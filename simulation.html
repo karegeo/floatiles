@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>FloaTiles — LCCA simulation</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+  :root {
+    --bg: #0f1116;
+    --panel: #1a1d24;
+    --fg: #e6e8eb;
+    --muted: #8a94a3;
+    --accent: #4ea1f3;
+    --grid-bg: #0a0c10;
+  }
+  html, body {
+    margin: 0; padding: 0;
+    background: var(--bg); color: var(--fg);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    min-height: 100%;
+  }
+  .wrap {
+    max-width: 980px; margin: 0 auto; padding: 24px 16px 48px;
+  }
+  h1 { margin: 0 0 8px; font-weight: 600; }
+  p.lede { color: var(--muted); margin: 0 0 20px; line-height: 1.5; }
+  a { color: var(--accent); }
+  .stage {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 280px;
+    gap: 20px;
+  }
+  @media (max-width: 760px) {
+    .stage { grid-template-columns: 1fr; }
+  }
+  .canvas-wrap {
+    background: var(--grid-bg);
+    border: 1px solid #2a2f3a;
+    border-radius: 6px;
+    padding: 12px;
+    display: flex; flex-direction: column; align-items: center;
+  }
+  canvas {
+    background: var(--grid-bg);
+    image-rendering: pixelated;
+    width: 100%; max-width: 520px;
+    aspect-ratio: 1 / 1;
+    display: block;
+  }
+  .panel {
+    background: var(--panel);
+    border: 1px solid #2a2f3a;
+    border-radius: 6px;
+    padding: 16px;
+    font-size: 13px;
+  }
+  .panel h2 {
+    margin: 0 0 12px; font-size: 14px; font-weight: 600;
+    color: var(--muted); text-transform: uppercase; letter-spacing: 0.05em;
+  }
+  .row { display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px; }
+  .row label { color: var(--muted); }
+  .row .val { font-variant-numeric: tabular-nums; }
+  .ctl { margin-bottom: 14px; }
+  .ctl label { display: block; color: var(--muted); margin-bottom: 4px; font-size: 12px; }
+  .ctl-head { display: flex; justify-content: space-between; }
+  .ctl input[type=range] { width: 100%; accent-color: var(--accent); }
+  .buttons { display: flex; gap: 8px; margin-top: 12px; }
+  button {
+    background: #262b35; color: var(--fg);
+    border: 1px solid #353b46;
+    border-radius: 4px; padding: 6px 12px;
+    cursor: pointer; font: inherit;
+  }
+  button:hover { background: #2f3540; }
+  button.primary { background: var(--accent); color: #0f1116; border-color: var(--accent); font-weight: 600; }
+  button.primary:hover { filter: brightness(1.1); }
+  .stats { font-variant-numeric: tabular-nums; }
+  .legend {
+    font-size: 11px; color: var(--muted); margin-top: 12px; line-height: 1.5;
+  }
+  .footer-note {
+    margin-top: 20px; color: var(--muted); font-size: 12px; line-height: 1.6;
+  }
+  code { background: #181b22; padding: 1px 4px; border-radius: 3px; font-size: 12px; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>FloaTiles — LCCA simulation</h1>
+  <p class="lede">
+    On-lattice cluster–cluster aggregation, ported to JavaScript from the C reference
+    implementation (<code>lcca_v18</code>). Clusters diffuse with size-dependent
+    mobility, stick on face contact with probability <em>p<sub>stick</sub></em>, and
+    lose surface cells at rate <em>ε</em>; evaporated cells re-deposit as monomers
+    nearby, conserving the total tile count.
+    <a href="./">← back to project page</a>
+  </p>
+
+  <div class="stage">
+    <div class="canvas-wrap">
+      <canvas id="canvas" width="500" height="500"></canvas>
+    </div>
+
+    <div class="panel">
+      <h2>Parameters</h2>
+
+      <div class="ctl">
+        <div class="ctl-head"><label for="density">density φ</label><span class="val" id="densityVal">8.0%</span></div>
+        <input type="range" id="density" min="2" max="25" step="0.5" value="8">
+      </div>
+
+      <div class="ctl">
+        <div class="ctl-head"><label for="pstick">sticking <em>p<sub>stick</sub></em></label><span class="val" id="pstickVal">0.50</span></div>
+        <input type="range" id="pstick" min="0" max="1" step="0.01" value="0.5">
+      </div>
+
+      <div class="ctl">
+        <div class="ctl-head"><label for="eps">evaporation <em>ε</em></label><span class="val" id="epsVal">0.0010</span></div>
+        <input type="range" id="eps" min="0" max="0.02" step="0.0005" value="0.001">
+      </div>
+
+      <div class="ctl">
+        <div class="ctl-head"><label for="gamma">diffusion exponent γ</label><span class="val" id="gammaVal">1.0</span></div>
+        <input type="range" id="gamma" min="0" max="2" step="0.1" value="1.0">
+      </div>
+
+      <div class="ctl">
+        <div class="ctl-head"><label for="speed">speed (frames/tick)</label><span class="val" id="speedVal">1</span></div>
+        <input type="range" id="speed" min="1" max="20" step="1" value="1">
+      </div>
+
+      <div class="buttons">
+        <button id="playBtn" class="primary">Pause</button>
+        <button id="resetBtn">Reset</button>
+      </div>
+
+      <h2 style="margin-top:18px">Live stats</h2>
+      <div class="stats">
+        <div class="row"><label>frame</label><span class="val" id="statFrame">0</span></div>
+        <div class="row"><label>clusters</label><span class="val" id="statN">—</span></div>
+        <div class="row"><label>max size</label><span class="val" id="statMax">—</span></div>
+        <div class="row"><label>mean size</label><span class="val" id="statMean">—</span></div>
+        <div class="row"><label>total cells</label><span class="val" id="statTotal">—</span></div>
+      </div>
+
+      <div class="legend">
+        Density φ = N / (W·H). Each colour is a distinct cluster; colour is hashed
+        from the cluster ID, so newly created clusters get fresh colours. Changing
+        density triggers a reset.
+      </div>
+    </div>
+  </div>
+
+  <p class="footer-note">
+    Algorithm faithful to FloaTiles LCCA v18: 50×50 hard-walled grid, isotropic
+    8-direction movement (cardinal weight 1, diagonal 1/√2), size-dependent
+    mobility 1/A<sup>γ</sup>, per-face sticking, union-find + BFS relabel after
+    merge, surface evaporation with teleport at 1 &lt; Chebyshev distance ≤ 2.
+    Source visible by view-source.
+  </p>
+</div>
+
+<script>
+"use strict";
+
+const W = 50, H = 50;
+let N = 200;            // particle count (set from density slider)
+let gamma = 1.0;
+let pStick = 0.5;
+let eps = 0.001;
+const R = 2;            // evaporation teleport radius (Chebyshev)
+let speed = 1;          // simulation frames per animation tick
+let running = true;
+
+let grid = new Int32Array(W * H);
+let clusters = new Map();   // id -> {cells:[[r,c],...], size}
+let nextId = 1;
+let frame = 0;
+
+const NB = [[-1,0],[1,0],[0,-1],[0,1]];
+const DIRS = [
+  [-1, 0, 1.0], [ 1, 0, 1.0], [ 0,-1, 1.0], [ 0, 1, 1.0],
+  [-1,-1, Math.SQRT1_2], [-1, 1, Math.SQRT1_2],
+  [ 1,-1, Math.SQRT1_2], [ 1, 1, Math.SQRT1_2],
+];
+const TOTAL_W = 4 + 4 * Math.SQRT1_2;
+
+function idx(r, c) { return r * W + c; }
+
+function sampleDir() {
+  let u = Math.random() * TOTAL_W;
+  for (const d of DIRS) {
+    u -= d[2];
+    if (u <= 0) return d;
+  }
+  return DIRS[DIRS.length - 1];
+}
+
+function shuffle(arr) {
+  for (let i = arr.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [arr[i], arr[j]] = [arr[j], arr[i]];
+  }
+}
+
+function init() {
+  grid.fill(0);
+  clusters.clear();
+  nextId = 1;
+  frame = 0;
+  const placed = new Set();
+  let count = 0;
+  let attempts = 0;
+  while (count < N && attempts < 200000) {
+    attempts++;
+    const r = 1 + Math.floor(Math.random() * (H - 2));
+    const c = 1 + Math.floor(Math.random() * (W - 2));
+    const k = idx(r, c);
+    if (placed.has(k)) continue;
+    placed.add(k);
+    const id = nextId++;
+    grid[k] = id;
+    clusters.set(id, { cells: [[r, c]], size: 1 });
+    count++;
+  }
+}
+
+function bfsComponents(cells) {
+  const set = new Set(cells.map(([r, c]) => idx(r, c)));
+  const visited = new Set();
+  const comps = [];
+  for (const key of set) {
+    if (visited.has(key)) continue;
+    const comp = [];
+    const queue = [key];
+    visited.add(key);
+    while (queue.length > 0) {
+      const k = queue.shift();
+      const r = (k / W) | 0;
+      const c = k % W;
+      comp.push([r, c]);
+      for (const [dr, dc] of NB) {
+        const nr = r + dr, nc = c + dc;
+        if (nr < 0 || nr >= H || nc < 0 || nc >= W) continue;
+        const nk = idx(nr, nc);
+        if (set.has(nk) && !visited.has(nk)) {
+          visited.add(nk);
+          queue.push(nk);
+        }
+      }
+    }
+    comps.push(comp);
+  }
+  return comps;
+}
+
+function movementAndMerging() {
+  const ids = [...clusters.keys()];
+  shuffle(ids);
+
+  // --- MOVEMENT ---
+  for (const id of ids) {
+    const C = clusters.get(id);
+    if (!C) continue;
+    const pMove = 1 / Math.pow(C.size, gamma);
+    if (Math.random() > pMove) continue;
+    const [dr, dc] = sampleDir();
+    // boundary + collision
+    let bad = false;
+    for (let i = 0; i < C.cells.length; i++) {
+      const r = C.cells[i][0], c = C.cells[i][1];
+      const nr = r + dr, nc = c + dc;
+      if (nr < 0 || nr >= H || nc < 0 || nc >= W) { bad = true; break; }
+      const dest = grid[idx(nr, nc)];
+      if (dest !== 0 && dest !== id) { bad = true; break; }
+    }
+    if (bad) continue;
+    // corner-cross check (diagonal moves only)
+    if (dr !== 0 && dc !== 0) {
+      let blocked = false;
+      for (let i = 0; i < C.cells.length; i++) {
+        const r = C.cells[i][0], c = C.cells[i][1];
+        const a = grid[idx(r + dr, c)];
+        const b = grid[idx(r, c + dc)];
+        if (a !== 0 && a !== id && b !== 0 && b !== id) { blocked = true; break; }
+      }
+      if (blocked) continue;
+    }
+    // apply move
+    for (let i = 0; i < C.cells.length; i++) grid[idx(C.cells[i][0], C.cells[i][1])] = 0;
+    for (let i = 0; i < C.cells.length; i++) {
+      C.cells[i][0] += dr;
+      C.cells[i][1] += dc;
+      grid[idx(C.cells[i][0], C.cells[i][1])] = id;
+    }
+  }
+
+  // --- MERGING via union-find on stochastic face contacts ---
+  const parent = new Map();
+  for (const id of clusters.keys()) parent.set(id, id);
+  const find = (x) => {
+    while (parent.get(x) !== x) {
+      parent.set(x, parent.get(parent.get(x)));
+      x = parent.get(x);
+    }
+    return x;
+  };
+  const union = (a, b) => {
+    const ra = find(a), rb = find(b);
+    if (ra !== rb) parent.set(ra, rb);
+  };
+
+  for (const [id, C] of clusters) {
+    for (let i = 0; i < C.cells.length; i++) {
+      const r = C.cells[i][0], c = C.cells[i][1];
+      for (const [dr, dc] of NB) {
+        const nr = r + dr, nc = c + dc;
+        if (nr < 0 || nr >= H || nc < 0 || nc >= W) continue;
+        const other = grid[idx(nr, nc)];
+        if (other === 0 || other === id) continue;
+        if (Math.random() < pStick) union(id, other);
+      }
+    }
+  }
+
+  // group by root and relabel components
+  const groups = new Map();
+  for (const id of clusters.keys()) {
+    const root = find(id);
+    if (!groups.has(root)) groups.set(root, []);
+    groups.get(root).push(id);
+  }
+  for (const [root, members] of groups) {
+    if (members.length < 2) continue;
+    const pooled = [];
+    for (const m of members) pooled.push(...clusters.get(m).cells);
+    const comps = bfsComponents(pooled);
+    comps.sort((a, b) => b.length - a.length);
+    for (const m of members) clusters.delete(m);
+    for (let i = 0; i < comps.length; i++) {
+      // largest component reuses the root id; others get fresh ids
+      const cid = i === 0 ? root : nextId++;
+      const comp = comps[i];
+      for (const [r, c] of comp) grid[idx(r, c)] = cid;
+      clusters.set(cid, { cells: comp, size: comp.length });
+    }
+  }
+}
+
+function evaporation() {
+  const ids = [...clusters.keys()];
+  for (const id of ids) {
+    const C = clusters.get(id);
+    if (!C || C.size < 2) continue;
+
+    const exposed = [];
+    for (let i = 0; i < C.cells.length; i++) {
+      const r = C.cells[i][0], c = C.cells[i][1];
+      for (const [dr, dc] of NB) {
+        const nr = r + dr, nc = c + dc;
+        if (nr < 0 || nr >= H || nc < 0 || nc >= W || grid[idx(nr, nc)] === 0) {
+          exposed.push([r, c]);
+          break;
+        }
+      }
+    }
+    const removed = [];
+    for (const cell of exposed) if (Math.random() < eps) removed.push(cell);
+    if (removed.length === 0) continue;
+
+    const removeSet = new Set(removed.map(([r, c]) => idx(r, c)));
+    for (const k of removeSet) grid[k] = 0;
+    const remaining = C.cells.filter(([r, c]) => !removeSet.has(idx(r, c)));
+    clusters.delete(id);
+
+    if (remaining.length > 0) {
+      const comps = bfsComponents(remaining);
+      comps.sort((a, b) => b.length - a.length);
+      for (let i = 0; i < comps.length; i++) {
+        const cid = i === 0 ? id : nextId++;
+        const comp = comps[i];
+        for (const [r, c] of comp) grid[idx(r, c)] = cid;
+        clusters.set(cid, { cells: comp, size: comp.length });
+      }
+    }
+
+    for (const [or, oc] of removed) {
+      const cands = [];
+      for (let dr = -R; dr <= R; dr++) {
+        for (let dc = -R; dc <= R; dc++) {
+          const cheby = Math.max(Math.abs(dr), Math.abs(dc));
+          if (cheby <= 1 || cheby > R) continue;
+          const nr = or + dr, nc = oc + dc;
+          if (nr < 0 || nr >= H || nc < 0 || nc >= W) continue;
+          if (grid[idx(nr, nc)] !== 0) continue;
+          cands.push([nr, nc]);
+        }
+      }
+      let dr2, dc2;
+      if (cands.length > 0) {
+        [dr2, dc2] = cands[Math.floor(Math.random() * cands.length)];
+      } else {
+        dr2 = or; dc2 = oc;
+      }
+      if (grid[idx(dr2, dc2)] === 0) {
+        const newId = nextId++;
+        grid[idx(dr2, dc2)] = newId;
+        clusters.set(newId, { cells: [[dr2, dc2]], size: 1 });
+      }
+    }
+  }
+}
+
+function step() {
+  movementAndMerging();
+  evaporation();
+  frame++;
+}
+
+// --- rendering ---
+const canvas = document.getElementById("canvas");
+const ctx = canvas.getContext("2d");
+const cellPx = canvas.width / W;
+
+function colourFor(id) {
+  // stable hash: golden-ratio-spaced hues
+  const hue = (id * 137.508) % 360;
+  return `hsl(${hue},65%,58%)`;
+}
+
+function draw() {
+  ctx.fillStyle = "#0a0c10";
+  ctx.fillRect(0, 0, canvas.width, canvas.height);
+  for (const [id, C] of clusters) {
+    ctx.fillStyle = colourFor(id);
+    for (let i = 0; i < C.cells.length; i++) {
+      const r = C.cells[i][0], c = C.cells[i][1];
+      ctx.fillRect(c * cellPx, r * cellPx, cellPx, cellPx);
+    }
+  }
+}
+
+function updateStats() {
+  let total = 0, maxS = 0;
+  for (const C of clusters.values()) {
+    total += C.size;
+    if (C.size > maxS) maxS = C.size;
+  }
+  const n = clusters.size;
+  document.getElementById("statFrame").textContent = frame;
+  document.getElementById("statN").textContent = n;
+  document.getElementById("statMax").textContent = maxS;
+  document.getElementById("statMean").textContent = n > 0 ? (total / n).toFixed(2) : "—";
+  document.getElementById("statTotal").textContent = total;
+}
+
+// --- main loop ---
+function tick() {
+  if (running) {
+    for (let i = 0; i < speed; i++) step();
+    draw();
+    updateStats();
+  }
+  requestAnimationFrame(tick);
+}
+
+// --- controls ---
+function bindSlider(id, valId, fmt, onChange) {
+  const el = document.getElementById(id);
+  const valEl = document.getElementById(valId);
+  const update = () => {
+    const v = parseFloat(el.value);
+    valEl.textContent = fmt(v);
+    onChange(v);
+  };
+  el.addEventListener("input", update);
+  update();
+}
+
+bindSlider("density", "densityVal",
+  v => v.toFixed(1) + "%",
+  v => {
+    N = Math.round(W * H * v / 100);
+    init();
+    draw();
+    updateStats();
+  });
+
+bindSlider("pstick", "pstickVal",
+  v => v.toFixed(2),
+  v => { pStick = v; });
+
+bindSlider("eps", "epsVal",
+  v => v.toFixed(4),
+  v => { eps = v; });
+
+bindSlider("gamma", "gammaVal",
+  v => v.toFixed(1),
+  v => { gamma = v; });
+
+bindSlider("speed", "speedVal",
+  v => String(v | 0),
+  v => { speed = v | 0; });
+
+document.getElementById("playBtn").addEventListener("click", e => {
+  running = !running;
+  e.target.textContent = running ? "Pause" : "Play";
+});
+
+document.getElementById("resetBtn").addEventListener("click", () => {
+  init();
+  draw();
+  updateStats();
+});
+
+// boot
+init();
+draw();
+updateStats();
+requestAnimationFrame(tick);
+</script>
+</body>
+</html>
