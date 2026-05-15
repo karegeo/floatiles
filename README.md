@@ -138,7 +138,7 @@ Background reading that the FloaTiles project sits next to. Most of these are ge
 ### Aggregation and pattern formation
 
 - [**Diffusion-limited aggregation** (Wikipedia)](https://en.wikipedia.org/wiki/Diffusion-limited_aggregation) — the canonical stochastic model for fractal aggregation (Witten & Sander, 1981). Cluster–cluster aggregation is its many-cluster cousin and is the most natural theoretical reference point for the patterns FloaTiles produces.
-- [**Active matter** (Wikipedia)](https://en.wikipedia.org/wiki/Active_matter) — collective behaviour in systems of self-propelled units. FloaTiles is *passive* — useful as a counterpoint, since the tiles have no internal energy source and all noise comes from outside.
+- [**Active matter** (Wikipedia)](https://en.wikipedia.org/wiki/Active_matter) — a coarse-grained description of collective behaviour in systems whose individual units are *driven* (each unit appears to inject energy at its own scale). FloaTiles is driven only externally — at the level of the whole pool — and the individual tiles themselves are passive. The line between "active" and "passive" is really a statement about where, in the coarse-grained description, the drive enters.
 - [**Granular material** (Wikipedia)](https://en.wikipedia.org/wiki/Granular_material) — vibrated granular layers also show rich pattern formation and segregation, and share several technical questions (Faraday-like instabilities, jamming, anisotropy of agitation) with FloaTiles.
 
 ### Self-assembly as a manufacturing approach
