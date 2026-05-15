@@ -16,6 +16,16 @@ The goal of the project is modest: to see how much interesting collective behavi
 
 ---
 
+## Interactive simulation
+
+A small in-browser simulation of the on-lattice cluster–cluster aggregation model that we use to compare against the experiment:
+
+➡ **[Open the simulation](simulation.html)**
+
+Sliders let you change the surface density φ, the sticking probability *p*<sub>stick</sub>, the evaporation rate *ε*, and the diffusion exponent *γ*. Live stats show the number of clusters, the largest cluster, and the mean cluster size. The algorithm is a faithful port of the C reference (`lcca_v18`): 50×50 grid, 8-direction isotropic diffusion with size-dependent mobility, per-face stochastic sticking with union-find + BFS relabel, surface evaporation with short-range teleport that conserves the total tile count.
+
+---
+
 ## ALIFE 2024
 
 Karelin, G. (2024). *Floatiles: Self-Assembly Based On Cheerios Effect and Aperiodic Monotiles.* ALIFE 2024 (extended abstract).
