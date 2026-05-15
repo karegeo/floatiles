@@ -69,6 +69,22 @@ Aperiodic monotiles are single shapes that tile the plane without producing a re
 
 Self-organisation shows up everywhere in nature, from cereal in a bowl to mosquito eggs and fire-ant rafts. FloaTiles is a small attempt to reproduce a tiny corner of that in a controlled, easy-to-rebuild setup, and to see what happens when the tile shape is unusual.
 
+### A theoretical anchor: the Smoluchowski equation
+
+The classical starting point for thinking about aggregation kinetics is **Smoluchowski's coagulation equation** (Smoluchowski, 1916). If $n_k(t)$ is the number density of clusters of size $k$ at time $t$, and $K_{ij}$ is the rate at which clusters of size $i$ and $j$ meet and merge, then
+
+$$
+\frac{\partial n_k}{\partial t} \;=\; \tfrac{1}{2}\sum_{i+j=k} K_{ij}\,n_i\,n_j \;-\; n_k \sum_{j=1}^{\infty} K_{kj}\,n_j .
+$$
+
+The first term creates clusters of size $k$ by merging smaller ones; the second removes them by merging with anything else. In FloaTiles, where agitation (vibration, airflow) breaks clusters apart, the natural extension is the **aggregation–fragmentation** version, with an additional fragmentation kernel $F_{ij}$:
+
+$$
+\frac{\partial n_k}{\partial t} \;=\; \tfrac{1}{2}\!\!\sum_{i+j=k}\!\! K_{ij}\,n_i\,n_j \;-\; n_k\!\sum_{j\ge 1}\! K_{kj}\,n_j \;-\; n_k \,\Gamma_k \;+\!\!\sum_{i+j=k}\!\! F_{ij}\,n_{i+j} ,
+$$
+
+where $\Gamma_k = \sum_{i+j=k} F_{ij}$ is the total fragmentation rate of clusters of size $k$. The shape of $K_{ij}$ and $F_{ij}$ encodes the physics: the geometry of the tiles, the strength of the capillary bond, and the level of agitation. These coarse-grained rates are exactly what FloaTiles, viewed as an aggregation-kinetics experiment, can be used to probe.
+
 ---
 
 ## Apparatus
@@ -111,6 +127,10 @@ Full poster: [Poster CCS2023stable.pdf](Poster%20CCS2023stable.pdf)
 10. Hooshanginejad, A. et al. (2024). *Interactions and pattern formation in a macroscopic magnetocapillary SALR system of mermaid cereal.* Nature Communications 15, 5466.
 11. Wilt, J. K., Schramma, N., Bottermans, J.-W. & Jalaal, M. (2024). *ActiveCheerios: 3D-printed Marangoni-driven active particles at an interface.* arXiv:2411.16011.
 12. Eatson, J. L., Morgan, S. O., Horozov, T. S. & Buzza, D. M. A. (2024). *Programmable 2D materials through shape-controlled capillary forces.* PNAS 121(35).
+13. Smoluchowski, M. (1916). *Drei Vorträge über Diffusion, Brownsche Molekularbewegung und Koagulation von Kolloidteilchen.* Physikalische Zeitschrift 17, 557–585.
+14. Brilliantov, N. V. et al. (2018). *Steady oscillations in aggregation–fragmentation processes.* Physical Review E 98, 012109.
+15. Witten, T. A. & Sander, L. M. (1981). *Diffusion-limited aggregation, a kinetic critical phenomenon.* Physical Review Letters 47(19), 1400–1403.
+16. Meakin, P. (1984). *The effects of rotational diffusion on the fractal dimensionality of structures formed by cluster–cluster aggregation.* J. Chem. Phys. 81(10), 4637–4639.
 
 ---
 
