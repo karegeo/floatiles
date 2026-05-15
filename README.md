@@ -6,7 +6,7 @@ A small experimental project by Georgii Karelin at the [Embodied Cognitive Scien
 
 <https://karegeo.github.io/floatiles/>
 
-<sub>*Last updated: 2026-05-15 09:48 UTC*</sub>
+<sub>*Last updated: 2026-05-15 09:54 UTC*</sub>
 
 ---
 
@@ -110,6 +110,8 @@ A shallow rectangular pool sits on a slab supported by a modular perforated-stee
 The frame and pool are described by a parametric OpenSCAD model. The model is a *conceptual* rendering made after the table was already built from available materials — it is close to the real apparatus but is not a literal blueprint of this particular table.
 
 Source: [`apparatus.scad`](apparatus.scad). Open it in [OpenSCAD](https://openscad.org/) to inspect, modify, or render the geometry.
+
+🖱️ **[View the apparatus in 3D in your browser](apparatus_3d.html)** (Three.js, ~2 MB STL)
 
 ### Tiles
 
