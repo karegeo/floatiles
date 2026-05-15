@@ -6,7 +6,7 @@ A small experimental project by Georgii Karelin at the [Embodied Cognitive Scien
 
 <https://karegeo.github.io/floatiles/>
 
-<sub>*Last updated: 2026-05-15 09:19 UTC*</sub>
+<sub>*Last updated: 2026-05-15 09:32 UTC*</sub>
 
 ---
 
@@ -107,7 +107,7 @@ where $\Gamma_k = \sum_{i+j=k} F_{ij}$ is the total fragmentation rate of cluste
 
 A shallow rectangular pool sits on a slab supported by a modular perforated-steel-strut frame. A small DC motor with an eccentric mass is mounted underneath and couples vibration into the slab and the water; a household speed controller (JDT-001) lets us adjust amplitude and frequency. Optional small fans and an aquarium bubble generator provide alternative ways of adding noise. A USB webcam above the pool records the experiment.
 
-The frame and pool are designed as a parametric OpenSCAD script, so the dimensions can be reproduced or adapted.
+The frame and pool are described by a parametric OpenSCAD model. The model is a *conceptual* rendering made after the table was already built from available materials — it is close to the real apparatus but is not a literal blueprint of this particular table.
 
 ### Tiles
 
@@ -167,6 +167,8 @@ The full BibTeX file for these references is available in the repository as [`re
 This project would not have been possible without the help of the **OIST Embodied Cognitive Science Unit (ECSU)**: **Stephen Estelle** for 3D printing and laser cutting, **Brian Morrissey** for the vibrational platform, and **Tom Froese** for supervision and support. **Roman Mukhin** kindly helped with the first 3D print. The first pilot experiments were carried out during an educational visit to the **Takashi Ikegami Laboratory** at the University of Tokyo, with the help of [johnsmith](http://johnsmithstudios.com).
 
 Tile-design files originally drew on <https://github.com/christianp/aperiodic-monotile> and Craig Kaplan's spectre resource at <https://cs.uwaterloo.ca/~csk/spectre/>. QR code generated with <https://stablediffusion.fr>.
+
+This web page was assembled with the help of Anthropic's **Claude** (Claude Code), working from drafts and source material provided by the author. All scientific content, decisions, and any remaining errors are the author's own.
 
 ---
 
