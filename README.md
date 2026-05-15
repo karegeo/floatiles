@@ -30,8 +30,8 @@ Sliders let you change the surface density φ, the sticking probability *p*<sub>
 
 Karelin, G. (2024). *Floatiles: Self-Assembly Based On Cheerios Effect and Aperiodic Monotiles.* ALIFE 2024 (extended abstract).
 
-- Extended abstract: [ALife_conference_2024___Submission_32___Camera_Ready.pdf](ALife_conference_2024___Submission_32___Camera_Ready.pdf)
-- Poster: [ALIFE_2024_OIST_LaTeX_Template__OIST_Posters-1.pdf](ALIFE_2024_OIST_LaTeX_Template__OIST_Posters-1.pdf)
+- [ALIFE 2024 — extended abstract (PDF)](ALife_conference_2024___Submission_32___Camera_Ready.pdf)
+- [ALIFE 2024 — poster (PDF)](ALIFE_2024_OIST_LaTeX_Template__OIST_Posters-1.pdf)
 
 ---
 
@@ -119,7 +119,7 @@ The frame and pool are designed as a parametric OpenSCAD script, so the dimensio
 >
 > The **FloaTiles** project combines these two ideas to demonstrate how individual tiles interact through the Cheerios effect to produce emergent behaviour. The system can produce more complex patterns by adding tiles and stationary elements (engines) that have specific effects like attraction and repulsion, and patterns can affect the level of perturbation in real time via a video-feedback loop from the camera.
 
-Full poster: [Poster CCS2023stable.pdf](Poster%20CCS2023stable.pdf)
+[Full poster (PDF)](Poster%20CCS2023stable.pdf)
 
 ---
 
