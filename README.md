@@ -6,6 +6,8 @@ A small experimental project by Georgii Karelin at the [Embodied Cognitive Scien
 
 <https://karegeo.github.io/floatiles/>
 
+<sub>*Last updated: 2026-05-15 09:19 UTC*</sub>
+
 ---
 
 ## About
