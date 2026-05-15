@@ -1,6 +1,3 @@
----
----
-
 # FloaTiles
 
 **Self-assembly based on the Cheerios effect and aperiodic monotiles.**
@@ -8,8 +5,6 @@
 A small experimental project by Georgii Karelin at the [Embodied Cognitive Science Unit (ECSU)](https://www.oist.jp/research/research-units/ecsu), Okinawa Institute of Science and Technology Graduate University (OIST).
 
 <https://karegeo.github.io/floatiles/>
-
-<sub>*Last updated: {{ site.time | date: "%Y-%m-%d %H:%M UTC" }}*</sub>
 
 ---
 
