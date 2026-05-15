@@ -144,7 +144,7 @@ The frame and pool are designed as a parametric OpenSCAD script, so the dimensio
 13. Smoluchowski, M. (1916). *Drei Vorträge über Diffusion, Brownsche Molekularbewegung und Koagulation von Kolloidteilchen.* Physikalische Zeitschrift 17, 557–585.
 14. Brilliantov, N. V. et al. (2018). *Steady oscillations in aggregation–fragmentation processes.* Physical Review E 98, 012109. [doi:10.1103/PhysRevE.98.012109](https://doi.org/10.1103/PhysRevE.98.012109)
 15. Witten, T. A. & Sander, L. M. (1981). *Diffusion-limited aggregation, a kinetic critical phenomenon.* Physical Review Letters 47(19), 1400–1403. [doi:10.1103/PhysRevLett.47.1400](https://doi.org/10.1103/PhysRevLett.47.1400)
-16. Meakin, P. (1984). *The effects of rotational diffusion on the fractal dimensionality of structures formed by cluster–cluster aggregation.* J. Chem. Phys. 81(10), 4637–4639. [doi:10.1063/1.447637](https://doi.org/10.1063/1.447637)
+16. Meakin, P. (1984). *The effects of rotational diffusion on the fractal dimensionality of structures formed by cluster–cluster aggregation.* J. Chem. Phys. 81(10), 4637–4639. [doi:10.1063/1.447398](https://doi.org/10.1063/1.447398)
 
 ---
 
