@@ -6,7 +6,7 @@ A small experimental project by Georgii Karelin at the [Embodied Cognitive Scien
 
 <https://karegeo.github.io/floatiles/>
 
-<sub>*Last updated: 2026-05-15 09:54 UTC*</sub>
+<sub>*Last updated: 2026-05-15 11:43 UTC*</sub>
 
 ---
 
@@ -111,7 +111,9 @@ The frame and pool are described by a parametric OpenSCAD model. The model is a 
 
 Source: [`apparatus.scad`](apparatus.scad). Open it in [OpenSCAD](https://openscad.org/) to inspect, modify, or render the geometry.
 
-🖱️ **[View the apparatus in 3D in your browser](apparatus_3d.html)** (Three.js, ~2 MB STL)
+🖱️ **[Open the 3D viewer in its own page](apparatus_3d.html)** (Three.js, ~2 MB STL)
+
+<iframe src="apparatus_3d.html" width="100%" height="600" style="border:1px solid #2a2f3a;border-radius:6px;" title="FloaTiles apparatus 3D viewer"></iframe>
 
 ### Tiles
 
