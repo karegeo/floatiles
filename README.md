@@ -14,6 +14,8 @@ FloaTiles is a simple, affordable tabletop experiment. Identical 3D-printed poly
 
 The goal of the project is modest: to see how much interesting collective behaviour can come out of very simple ingredients — geometry, surface tension, and a bit of noise — without any electronics or active components in the tiles themselves. Further analysis of the recordings is ongoing.
 
+**Status (May 2026):** paper in preparation for the AROB / ICAROB conference series; in-browser simulation v1 live; Hat- and Spectre-tile experiments ongoing.
+
 ---
 
 ## Interactive simulation
@@ -21,6 +23,8 @@ The goal of the project is modest: to see how much interesting collective behavi
 A small in-browser simulation of the on-lattice cluster–cluster aggregation model that we use to compare against the experiment:
 
 ➡ **[Open the simulation](simulation.html)**
+
+<iframe src="simulation.html" width="100%" height="600" style="border:1px solid #2a2f3a;border-radius:6px;" title="FloaTiles LCCA simulation"></iframe>
 
 Sliders let you change the surface density φ, the sticking probability *p*<sub>stick</sub>, the evaporation rate *ε*, and the diffusion exponent *γ*. Live stats show the number of clusters, the largest cluster, and the mean cluster size. The algorithm is a faithful port of the C reference (`lcca_v18`): 50×50 grid, 8-direction isotropic diffusion with size-dependent mobility, per-face stochastic sticking with union-find + BFS relabel, surface evaporation with short-range teleport that conserves the total tile count.
 
@@ -125,22 +129,22 @@ The frame and pool are designed as a parametric OpenSCAD script, so the dimensio
 
 ## References
 
-1. Vella, D. & Mahadevan, L. (2005). *The "Cheerios effect."* American Journal of Physics 73(9), 817–825.
-2. Gifford, W. A. & Scriven, L. E. (1971). *On the attraction of floating particles.* Chemical Engineering Science 26(3), 287–297.
-3. Hosokawa, K., Shimoyama, I. & Miura, H. (1994). *Dynamics of self-assembling systems: analogy with chemical kinetics.* Artificial Life 1(4), 413–427.
-4. Hosokawa, K., Shimoyama, I. & Miura, H. (1996). *Two-dimensional micro-self-assembly using the surface tension of water.* Sensors and Actuators A 57(2), 117–125.
-5. Bowden, N., Terfort, A., Carbeck, J. & Whitesides, G. M. (1997). *Self-assembly of mesoscale objects into ordered two-dimensional arrays.* Science 276, 233–235.
-6. Bowden, N., Choi, I. S., Grzybowski, B. A. & Whitesides, G. M. (1999). *Mesoscale self-assembly of hexagonal plates using lateral capillary forces.* JACS 121(23), 5373–5391.
-7. Whitesides, G. M. & Grzybowski, B. (2002). *Self-assembly at all scales.* Science 295, 2418–2421.
-8. Smith, D., Myers, J. S., Kaplan, C. S. & Goodman-Strauss, C. (2024). *An aperiodic monotile.* Combinatorial Theory 4(1).
-9. Smith, D., Myers, J. S., Kaplan, C. S. & Goodman-Strauss, C. (2023). *A chiral aperiodic monotile.* arXiv:2305.17743.
-10. Hooshanginejad, A. et al. (2024). *Interactions and pattern formation in a macroscopic magnetocapillary SALR system of mermaid cereal.* Nature Communications 15, 5466.
-11. Wilt, J. K., Schramma, N., Bottermans, J.-W. & Jalaal, M. (2024). *ActiveCheerios: 3D-printed Marangoni-driven active particles at an interface.* arXiv:2411.16011.
-12. Eatson, J. L., Morgan, S. O., Horozov, T. S. & Buzza, D. M. A. (2024). *Programmable 2D materials through shape-controlled capillary forces.* PNAS 121(35).
+1. Vella, D. & Mahadevan, L. (2005). *The "Cheerios effect."* American Journal of Physics 73(9), 817–825. [doi:10.1119/1.1898523](https://doi.org/10.1119/1.1898523)
+2. Gifford, W. A. & Scriven, L. E. (1971). *On the attraction of floating particles.* Chemical Engineering Science 26(3), 287–297. [doi:10.1016/0009-2509(71)83003-8](https://doi.org/10.1016/0009-2509(71)83003-8)
+3. Hosokawa, K., Shimoyama, I. & Miura, H. (1994). *Dynamics of self-assembling systems: analogy with chemical kinetics.* Artificial Life 1(4), 413–427. [doi:10.1162/artl.1994.1.4.413](https://doi.org/10.1162/artl.1994.1.4.413)
+4. Hosokawa, K., Shimoyama, I. & Miura, H. (1996). *Two-dimensional micro-self-assembly using the surface tension of water.* Sensors and Actuators A 57(2), 117–125. [doi:10.1016/S0924-4247(97)80102-1](https://doi.org/10.1016/S0924-4247(97)80102-1)
+5. Bowden, N., Terfort, A., Carbeck, J. & Whitesides, G. M. (1997). *Self-assembly of mesoscale objects into ordered two-dimensional arrays.* Science 276, 233–235. [doi:10.1126/science.276.5310.233](https://doi.org/10.1126/science.276.5310.233)
+6. Bowden, N., Choi, I. S., Grzybowski, B. A. & Whitesides, G. M. (1999). *Mesoscale self-assembly of hexagonal plates using lateral capillary forces.* JACS 121(23), 5373–5391. [doi:10.1021/ja983882z](https://doi.org/10.1021/ja983882z)
+7. Whitesides, G. M. & Grzybowski, B. (2002). *Self-assembly at all scales.* Science 295, 2418–2421. [doi:10.1126/science.1070821](https://doi.org/10.1126/science.1070821)
+8. Smith, D., Myers, J. S., Kaplan, C. S. & Goodman-Strauss, C. (2024). *An aperiodic monotile.* Combinatorial Theory 4(1). [doi:10.5070/C64163843](https://doi.org/10.5070/C64163843)
+9. Smith, D., Myers, J. S., Kaplan, C. S. & Goodman-Strauss, C. (2023). *A chiral aperiodic monotile.* [arXiv:2305.17743](https://arxiv.org/abs/2305.17743)
+10. Hooshanginejad, A. et al. (2024). *Interactions and pattern formation in a macroscopic magnetocapillary SALR system of mermaid cereal.* Nature Communications 15, 5466. [doi:10.1038/s41467-024-49754-4](https://doi.org/10.1038/s41467-024-49754-4)
+11. Wilt, J. K., Schramma, N., Bottermans, J.-W. & Jalaal, M. (2024). *ActiveCheerios: 3D-printed Marangoni-driven active particles at an interface.* [arXiv:2411.16011](https://arxiv.org/abs/2411.16011)
+12. Eatson, J. L., Morgan, S. O., Horozov, T. S. & Buzza, D. M. A. (2024). *Programmable 2D materials through shape-controlled capillary forces.* PNAS 121(35). [doi:10.1073/pnas.2401134121](https://doi.org/10.1073/pnas.2401134121)
 13. Smoluchowski, M. (1916). *Drei Vorträge über Diffusion, Brownsche Molekularbewegung und Koagulation von Kolloidteilchen.* Physikalische Zeitschrift 17, 557–585.
-14. Brilliantov, N. V. et al. (2018). *Steady oscillations in aggregation–fragmentation processes.* Physical Review E 98, 012109.
-15. Witten, T. A. & Sander, L. M. (1981). *Diffusion-limited aggregation, a kinetic critical phenomenon.* Physical Review Letters 47(19), 1400–1403.
-16. Meakin, P. (1984). *The effects of rotational diffusion on the fractal dimensionality of structures formed by cluster–cluster aggregation.* J. Chem. Phys. 81(10), 4637–4639.
+14. Brilliantov, N. V. et al. (2018). *Steady oscillations in aggregation–fragmentation processes.* Physical Review E 98, 012109. [doi:10.1103/PhysRevE.98.012109](https://doi.org/10.1103/PhysRevE.98.012109)
+15. Witten, T. A. & Sander, L. M. (1981). *Diffusion-limited aggregation, a kinetic critical phenomenon.* Physical Review Letters 47(19), 1400–1403. [doi:10.1103/PhysRevLett.47.1400](https://doi.org/10.1103/PhysRevLett.47.1400)
+16. Meakin, P. (1984). *The effects of rotational diffusion on the fractal dimensionality of structures formed by cluster–cluster aggregation.* J. Chem. Phys. 81(10), 4637–4639. [doi:10.1063/1.447637](https://doi.org/10.1063/1.447637)
 
 ---
 
