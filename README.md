@@ -6,7 +6,7 @@ A small experimental project by Georgii Karelin at the [Embodied Cognitive Scien
 
 <https://karegeo.github.io/floatiles/>
 
-<sub>*Last updated: 2026-05-15 09:32 UTC*</sub>
+<sub>*Last updated: 2026-05-15 09:48 UTC*</sub>
 
 ---
 
@@ -108,6 +108,8 @@ where $\Gamma_k = \sum_{i+j=k} F_{ij}$ is the total fragmentation rate of cluste
 A shallow rectangular pool sits on a slab supported by a modular perforated-steel-strut frame. A small DC motor with an eccentric mass is mounted underneath and couples vibration into the slab and the water; a household speed controller (JDT-001) lets us adjust amplitude and frequency. Optional small fans and an aquarium bubble generator provide alternative ways of adding noise. A USB webcam above the pool records the experiment.
 
 The frame and pool are described by a parametric OpenSCAD model. The model is a *conceptual* rendering made after the table was already built from available materials — it is close to the real apparatus but is not a literal blueprint of this particular table.
+
+Source: [`apparatus.scad`](apparatus.scad). Open it in [OpenSCAD](https://openscad.org/) to inspect, modify, or render the geometry.
 
 ### Tiles
 
