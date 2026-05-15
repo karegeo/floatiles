@@ -10,7 +10,7 @@ A small experimental project by Georgii Karelin at the [Embodied Cognitive Scien
 
 <https://karegeo.github.io/floatiles/>
 
-<sub>*Page last built: {{ site.time | date: "%Y-%m-%d %H:%M UTC" }}*</sub>
+<sub>*Last updated: {{ site.time | date: "%Y-%m-%d %H:%M UTC" }}*</sub>
 
 ---
 
