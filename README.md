@@ -215,7 +215,7 @@ Background reading that the FloaTiles project sits next to. Most of these are ge
 - [**Open-ended evolution** (Wikipedia)](https://en.wikipedia.org/wiki/Open-ended_evolution) — the longer-term question of whether systems like FloaTiles can be enriched into substrates where novelty keeps appearing.
 - [**ALIFE conference series**](https://alife.org/) — the annual international conference on artificial life.
 - [**ISAL — International Society for Artificial Life**](https://alife.org/about-isal/) — the society that organises ALIFE.
-- [**ISAROB — International Society for Artificial Life and Robotics**](https://isarob.org/) — host of the AROB / ICAROB conferences.
+- [**ISAROB — International Society for Artificial Life and Robotics**](https://isarob.org/) — host of the AROB conference.
 
 ### Institutional
 
