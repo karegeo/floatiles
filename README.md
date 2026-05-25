@@ -174,7 +174,7 @@ This project would not have been possible without the help of the **OIST Embodie
 
 ### Shape data
 
-Tile-design files originally drew on Christian Lawson-Perfect's [**aperiodic-monotile**](https://github.com/christianp/aperiodic-monotile) repository and Craig Kaplan's [**spectre resource**](https://cs.uwaterloo.ca/~csk/spectre/). The underlying geometry is mathematical knowledge and not in itself copyrightable; these sources are credited as the origin of the data used here.
+Tile-design files originally drew on Christian Lawson-Perfect's [**aperiodic-monotile**](https://github.com/christianp/aperiodic-monotile) repository, Craig Kaplan's [**spectre resource**](https://cs.uwaterloo.ca/~csk/spectre/), and the [**Hat**](https://polytope.miraheze.org/wiki/Hat) page on the Polytope Wiki. The underlying geometry is mathematical knowledge and not in itself copyrightable; these sources are credited as the origin of the data used here.
 
 ### Web page
 
