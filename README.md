@@ -172,7 +172,11 @@ The full BibTeX file for these references is available in the repository as [`re
 
 This project would not have been possible without the help of the **OIST Embodied Cognitive Science Unit (ECSU)**: **Stephen Estelle** for 3D printing and laser cutting, **Brian Morrissey** for the vibrational platform, and **Tom Froese** for supervision and support. **Roman Mukhin** kindly helped with the first 3D print. The first pilot experiments were carried out during an educational visit to the **Takashi Ikegami Laboratory** at the University of Tokyo, with the help of [johnsmith](http://johnsmithstudios.com).
 
-Tile-design files originally drew on <https://github.com/christianp/aperiodic-monotile> and Craig Kaplan's spectre resource at <https://cs.uwaterloo.ca/~csk/spectre/>. QR code generated with <https://stablediffusion.fr>.
+### Shape data
+
+Tile-design files originally drew on Christian Lawson-Perfect's [**aperiodic-monotile**](https://github.com/christianp/aperiodic-monotile) repository and Craig Kaplan's [**spectre resource**](https://cs.uwaterloo.ca/~csk/spectre/). The underlying geometry is mathematical knowledge and not in itself copyrightable; these sources are credited as the origin of the data used here.
+
+### Web page
 
 This web page was assembled with the help of Anthropic's **Claude** (Claude Code), working from drafts and source material provided by the author. All scientific content, decisions, and any remaining errors are the author's own.
 
