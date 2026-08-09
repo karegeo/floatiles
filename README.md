@@ -81,10 +81,6 @@ Three physical principles govern the effect:
 
 Aperiodic monotiles are single shapes that tile the plane without producing a repeating pattern. The 2023 discoveries of the **Hat** and **Spectre** tiles (Smith, Myers, Kaplan & Goodman-Strauss) made the *einstein* problem concrete with shapes that can be fabricated and studied physically. In FloaTiles we use 3D-printed tiles inspired by these shapes; small spikes and notches on the edges act as a primitive key-and-lock system that increases the effective capillary contact between adjacent tiles.
 
-### Tiling as computation
-
-**Stephen Wolfram** has argued that aggregation and tiling are best understood as genuine computational processes. In his essay [*Aggregation and Tiling as Multicomputational Processes*](https://writings.stephenwolfram.com/2023/11/aggregation-and-tiling-as-multicomputational-processes/) (2023) he treats the growth of an aggregate — each attachment of a new piece, the Hat monotile included — as an elementary computational event, with the many possible orders of attachment forming the branches of a multiway system. He presented this perspective again in his **ALIFE 2025 keynote**. Seen through that lens, a pool of floating monotiles being nudged together by capillary forces and noise is a small physical instance of exactly such a multicomputational process, and FloaTiles gratefully acknowledges the inspiration [27].
-
 ### Why it might be interesting
 
 Self-organisation shows up everywhere in nature, from cereal in a bowl to mosquito eggs and fire-ant rafts. FloaTiles is a small attempt to reproduce a tiny corner of that in a controlled, easy-to-rebuild setup, and to see what happens when the tile shape is unusual.
@@ -177,10 +173,6 @@ The full BibTeX file for these references is available in the repository as [`re
 
 This project would not have been possible without the help of the **OIST Embodied Cognitive Science Unit (ECSU)**: **Stephen Estelle** for 3D printing and laser cutting, **Brian Morrissey** for the vibrational platform, and **Tom Froese** for supervision and support. **Roman Mukhin** kindly helped with the first 3D print. The first pilot experiments were carried out during an educational visit to the **Takashi Ikegami Laboratory** at the University of Tokyo, with the help of [johnsmith](http://johnsmithstudios.com).
 
-### Intellectual inspiration
-
-Special thanks and respect to **Stephen Wolfram**, whose essay [*Aggregation and Tiling as Multicomputational Processes*](https://writings.stephenwolfram.com/2023/11/aggregation-and-tiling-as-multicomputational-processes/) (2023) and ALIFE 2025 keynote frame tiling and aggregation as forms of computation — a perspective that FloaTiles tries to explore in physical form.
-
 ### Shape data
 
 Tile-design files originally drew on Christian Lawson-Perfect's [**aperiodic-monotile**](https://github.com/christianp/aperiodic-monotile) repository, Craig Kaplan's [**spectre resource**](https://cs.uwaterloo.ca/~csk/spectre/), and the [**Hat**](https://polytope.miraheze.org/wiki/Hat) page on the Polytope Wiki. The underlying geometry is mathematical knowledge and not in itself copyrightable; these sources are credited as the origin of the data used here.
@@ -209,7 +201,7 @@ Background reading that the FloaTiles project sits next to. Most of these are ge
 - [**Diffusion-limited aggregation** (Wikipedia)](https://en.wikipedia.org/wiki/Diffusion-limited_aggregation) — the canonical stochastic model for fractal aggregation (Witten & Sander, 1981). Cluster–cluster aggregation is its many-cluster cousin and is the most natural theoretical reference point for the patterns FloaTiles produces.
 - [**Active matter** (Wikipedia)](https://en.wikipedia.org/wiki/Active_matter) — a coarse-grained description of collective behaviour in systems whose individual units are *driven* (each unit appears to inject energy at its own scale). FloaTiles is driven only externally — at the level of the whole pool — and the individual tiles themselves are passive. The line between "active" and "passive" is really a statement about where, in the coarse-grained description, the drive enters.
 - [**Granular material** (Wikipedia)](https://en.wikipedia.org/wiki/Granular_material) — vibrated granular layers also show rich pattern formation and segregation, and share several technical questions (Faraday-like instabilities, jamming, anisotropy of agitation) with FloaTiles.
-- [**Aggregation and Tiling as Multicomputational Processes** (Stephen Wolfram, 2023)](https://writings.stephenwolfram.com/2023/11/aggregation-and-tiling-as-multicomputational-processes/) — tiling and aggregation viewed as multicomputational processes; the computational reading of what a dish of FloaTiles is doing. Presented again in Wolfram's ALIFE 2025 keynote.
+- Stephen Wolfram (ALIFE 2025 keynote) considers tiling as a form of computation: [*Aggregation and Tiling as Multicomputational Processes*](https://writings.stephenwolfram.com/2023/11/aggregation-and-tiling-as-multicomputational-processes/)
 
 ### Self-assembly as a manufacturing approach
 
