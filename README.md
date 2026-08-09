@@ -6,7 +6,7 @@ A small experimental project by Georgii Karelin ([all projects](https://karegeo.
 
 <https://karegeo.github.io/floatiles/>
 
-<sub>*Last updated: 2026-05-15 11:50 UTC*</sub>
+<sub>*Last updated: 2026-08-09 05:49 UTC*</sub>
 
 ---
 
@@ -163,6 +163,7 @@ Source: [`apparatus.scad`](apparatus.scad). Open it in [OpenSCAD](https://opensc
 24. Zhao, L., Jiang, Y., She, C.-Y., Li, A. Q., Chen, M. & Balkcom, D. (2026). *SoftRafts: floating and adaptive soft modular robots.* npj Robotics 4, 8. [doi:10.1038/s44182-025-00070-z](https://doi.org/10.1038/s44182-025-00070-z)
 25. Voigt, J. et al. (2025). *An aperiodic chiral tiling by topological molecular self-assembly.* Nature Communications 16, 83. [doi:10.1038/s41467-024-55405-5](https://doi.org/10.1038/s41467-024-55405-5)
 26. Lattuada, M. (2012). *Predictive model for diffusion-limited aggregation kinetics of nanocolloids under high concentration.* J. Phys. Chem. B 116(1), 120–129. [doi:10.1021/jp2097839](https://doi.org/10.1021/jp2097839)
+27. Wolfram, S. (2023). *Aggregation and Tiling as Multicomputational Processes.* Stephen Wolfram Writings, November 2023. [writings.stephenwolfram.com](https://writings.stephenwolfram.com/2023/11/aggregation-and-tiling-as-multicomputational-processes/)
 
 The full BibTeX file for these references is available in the repository as [`references.bib`](references.bib).
 
@@ -200,6 +201,7 @@ Background reading that the FloaTiles project sits next to. Most of these are ge
 - [**Diffusion-limited aggregation** (Wikipedia)](https://en.wikipedia.org/wiki/Diffusion-limited_aggregation) — the canonical stochastic model for fractal aggregation (Witten & Sander, 1981). Cluster–cluster aggregation is its many-cluster cousin and is the most natural theoretical reference point for the patterns FloaTiles produces.
 - [**Active matter** (Wikipedia)](https://en.wikipedia.org/wiki/Active_matter) — a coarse-grained description of collective behaviour in systems whose individual units are *driven* (each unit appears to inject energy at its own scale). FloaTiles is driven only externally — at the level of the whole pool — and the individual tiles themselves are passive. The line between "active" and "passive" is really a statement about where, in the coarse-grained description, the drive enters.
 - [**Granular material** (Wikipedia)](https://en.wikipedia.org/wiki/Granular_material) — vibrated granular layers also show rich pattern formation and segregation, and share several technical questions (Faraday-like instabilities, jamming, anisotropy of agitation) with FloaTiles.
+- Stephen Wolfram (ALIFE 2025 keynote) considers tiling as a form of computation: [*Aggregation and Tiling as Multicomputational Processes*](https://writings.stephenwolfram.com/2023/11/aggregation-and-tiling-as-multicomputational-processes/)
 
 ### Self-assembly as a manufacturing approach
 
