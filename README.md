@@ -6,7 +6,9 @@ A small experimental project by Georgii Karelin ([all projects](https://karegeo.
 
 <https://karegeo.github.io/floatiles/>
 
-<sub>*Last updated: 2026-08-09 05:49 UTC*</sub>
+<sub>*Last updated: 2026-08-12 06:25 UTC*</sub>
+
+<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/oDsC-qaoQbE" title="FloaTiles — video about the project" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
 ---
 
