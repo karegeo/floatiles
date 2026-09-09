@@ -34,6 +34,20 @@ Sliders let you change the surface density φ, the sticking probability *p*<sub>
 
 ---
 
+## Off-lattice particle model
+
+The lattice model above abstracts a tile into a cell on a grid. This second simulation does the opposite: every tile is a rigid body with the **exact Hat outline at the printed size**, floating in a pool of the real dimensions, attracted to its neighbours by the capillary force along its rim, and stirred by the fan-driven circulation. Contacts, friction and walls are computed by a rigid-body solver compiled to WebAssembly.
+
+➡ **[Open the particle model](particle-model.html)**
+
+<iframe src="particle-model.html" width="100%" height="700" style="border:1px solid #2a2f3a;border-radius:6px;" title="FloaTiles off-lattice particle model"></iframe>
+
+The point of the extra cost is that the tile's *shape* is in the physics rather than assumed away. Because the capillary force acts along the rim instead of between centres, two tiles whose long edges face each other rotate until they are flush and bond along the whole edge — so how a cluster grows depends on which edges happen to meet. Sliders control the number of tiles, the strength of the stirring, the contact friction, an agitation term standing in for the vibrating table, and the bond energy; the rim bond can also be switched off for a plain centre-to-centre attraction, which makes the difference the geometry makes quite visible. Nothing stores a bond and there is no break-up rule: clusters come apart when drag, shear or an impact beats attraction plus friction.
+
+It is an instrument for building intuition rather than a source of numbers — the tile count is kept below the experiment's so it stays interactive, and it is not the pipeline used for quantitative analysis.
+
+---
+
 ## ALIFE 2024
 
 Karelin, G. (2024). *Floatiles: Self-Assembly Based On Cheerios Effect and Aperiodic Monotiles.* ALIFE 2024 (extended abstract).
@@ -178,6 +192,10 @@ This project would not have been possible without the help of the **OIST Embodie
 ### Shape data
 
 Tile-design files originally drew on Christian Lawson-Perfect's [**aperiodic-monotile**](https://github.com/christianp/aperiodic-monotile) repository, Craig Kaplan's [**spectre resource**](https://cs.uwaterloo.ca/~csk/spectre/), and the [**Hat**](https://polytope.miraheze.org/wiki/Hat) page on the Polytope Wiki. The underlying geometry is mathematical knowledge and not in itself copyrightable; these sources are credited as the origin of the data used here.
+
+### Simulation libraries
+
+The particle model runs on [**Box2D v3**](https://box2d.org) (Erin Catto) through [**box2d3-wasm**](https://github.com/Birch-san/box2d3-wasm) (Birch-san), falling back to [**Rapier**](https://rapier.rs) (Dimforge) where that cannot load. The research model it is ported from is written in Python over [**Pymunk**](https://pymunk.org) (Victor Blomqvist), which wraps [**Chipmunk2D**](https://chipmunk-physics.net) (Scott Lembcke) — cited as Blomqvist, Victor, *Pymunk: a easy-to-use pythonic rigid body 2d physics library*, version 7.3.0, released 2026-06-17, <https://pymunk.org>.
 
 ### Web page
 
