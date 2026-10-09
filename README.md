@@ -6,7 +6,7 @@ A small experimental project by Georgii Karelin ([all projects](https://karegeo.
 
 <https://karegeo.github.io/floatiles/>
 
-<sub>*Last updated: 2026-08-12 06:25 UTC*</sub>
+<sub>*Last updated: 2026-10-09 06:18 UTC*</sub>
 
 <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/oDsC-qaoQbE" title="FloaTiles — video about the project" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
@@ -18,7 +18,7 @@ FloaTiles is a simple, affordable tabletop experiment. Identical 3D-printed poly
 
 The goal of the project is modest: to see how much interesting collective behaviour can come out of very simple ingredients — geometry, surface tension, and a bit of noise — without any electronics or active components in the tiles themselves. Further analysis of the recordings is ongoing.
 
-**Status (May 2026):** paper in preparation for the AROB / ICAROB conference series; in-browser simulation v1 live; Hat- and Spectre-tile experiments ongoing.
+**Status (May 2026):** paper in preparation for the AROB / ISAROB conference series; in-browser simulation v1 live; Hat- and Spectre-tile experiments ongoing.
 
 ---
 
@@ -112,10 +112,10 @@ $$
 The first term creates clusters of size $k$ by merging smaller ones; the second removes them by merging with anything else. In FloaTiles, where agitation (vibration, airflow) breaks clusters apart, the natural extension is the **aggregation–fragmentation** version, with an additional fragmentation kernel $F_{ij}$:
 
 $$
-\frac{\partial n_k}{\partial t} \;=\; \tfrac{1}{2}\!\!\sum_{i+j=k}\!\! K_{ij}\,n_i\,n_j \;-\; n_k\!\sum_{j\ge 1}\! K_{kj}\,n_j \;-\; n_k \,\Gamma_k \;+\!\!\sum_{i+j=k}\!\! F_{ij}\,n_{i+j} ,
+\frac{\partial n_k}{\partial t} \;=\; \tfrac{1}{2}\!\!\sum_{i+j=k}\!\! K_{ij}\,n_i\,n_j \;-\; n_k\!\sum_{j\ge 1}\! K_{kj}\,n_j \;-\; n_k \,\Gamma_k \;+\!\sum_{j\ge 1}\! F_{kj}\,n_{k+j} ,
 $$
 
-where $\Gamma_k = \sum_{i+j=k} F_{ij}$ is the total fragmentation rate of clusters of size $k$. The shape of $K_{ij}$ and $F_{ij}$ encodes the physics: the geometry of the tiles, the strength of the capillary bond, and the level of agitation. These coarse-grained rates are exactly what FloaTiles, viewed as an aggregation-kinetics experiment, can be used to probe.
+where $F_{ij} = F_{ji}$ is the rate at which a cluster of size $i+j$ splits into fragments of sizes $i$ and $j$, and $\Gamma_k = \tfrac{1}{2}\sum_{i+j=k} F_{ij}$ is the total fragmentation rate of a cluster of size $k$ (the factor $\tfrac{1}{2}$ avoids counting each split twice). The last term is the gain from larger clusters, of size $k+j$, breaking into a piece of size $k$ and a piece of size $j$. The shape of $K_{ij}$ and $F_{ij}$ encodes the physics: the geometry of the tiles, the strength of the capillary bond, and the level of agitation. These coarse-grained rates are exactly what FloaTiles, viewed as an aggregation-kinetics experiment, can be used to probe.
 
 ---
 
@@ -165,7 +165,7 @@ Source: [`apparatus.scad`](apparatus.scad). Open it in [OpenSCAD](https://opensc
 10. Hooshanginejad, A. et al. (2024). *Interactions and pattern formation in a macroscopic magnetocapillary SALR system of mermaid cereal.* Nature Communications 15, 5466. [doi:10.1038/s41467-024-49754-4](https://doi.org/10.1038/s41467-024-49754-4)
 11. Wilt, J. K., Schramma, N., Bottermans, J.-W. & Jalaal, M. (2024). *ActiveCheerios: 3D-printed Marangoni-driven active particles at an interface.* [arXiv:2411.16011](https://arxiv.org/abs/2411.16011)
 12. Eatson, J. L., Morgan, S. O., Horozov, T. S. & Buzza, D. M. A. (2024). *Programmable 2D materials through shape-controlled capillary forces.* PNAS 121(35). [doi:10.1073/pnas.2401134121](https://doi.org/10.1073/pnas.2401134121)
-13. Smoluchowski, M. (1916). *Drei Vorträge über Diffusion, Brownsche Molekularbewegung und Koagulation von Kolloidteilchen.* Physikalische Zeitschrift 17, 557–585.
+13. Smoluchowski, M. (1916). *Drei Vorträge über Diffusion, Brownsche Molekularbewegung und Koagulation von Kolloidteilchen.* Physikalische Zeitschrift 17, 557–571, 585–599.
 14. Brilliantov, N. V. et al. (2018). *Steady oscillations in aggregation–fragmentation processes.* Physical Review E 98, 012109. [doi:10.1103/PhysRevE.98.012109](https://doi.org/10.1103/PhysRevE.98.012109)
 15. Witten, T. A. & Sander, L. M. (1981). *Diffusion-limited aggregation, a kinetic critical phenomenon.* Physical Review Letters 47(19), 1400–1403. [doi:10.1103/PhysRevLett.47.1400](https://doi.org/10.1103/PhysRevLett.47.1400)
 16. Meakin, P. (1984). *The effects of rotational diffusion on the fractal dimensionality of structures formed by cluster–cluster aggregation.* J. Chem. Phys. 81(10), 4637–4639. [doi:10.1063/1.447398](https://doi.org/10.1063/1.447398)
@@ -241,7 +241,7 @@ Background reading that the FloaTiles project sits next to. Most of these are ge
 - [**Open-ended evolution** (Wikipedia)](https://en.wikipedia.org/wiki/Open-ended_evolution) — the longer-term question of whether systems like FloaTiles can be enriched into substrates where novelty keeps appearing.
 - [**ALIFE conference series**](https://alife.org/) — the annual international conference on artificial life.
 - [**ISAL — International Society for Artificial Life**](https://alife.org/about-isal/) — the society that organises ALIFE.
-- [**ISAROB — International Society for Artificial Life and Robotics**](https://isarob.org/) — host of the AROB conference.
+- [**ISAROB — International Society of Artificial Life and Robotics**](https://isarob.org/) — host of the AROB conference.
 
 ### Institutional
 
